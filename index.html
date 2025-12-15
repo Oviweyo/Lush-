@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lushbytheway — Home</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Page transition overlay */
+        .page-transition {
+            position: fixed;
+            inset: 0;
+            background: #ff6600; /* site orange */
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: opacity 0.15s ease; /* FAST flash */
+        }
+
+        .page-transition.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Lushbytheway</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-text">
+        <h1>Lushbytheway</h1>
+        <p>Modern sound. Unique vibe. Welcome to the official website of Lushbytheway.</p>
+        <a class="btn" href="music.html">Listen Now</a>
+    </div>
+
+    <!-- Smoke layers (future-ready) -->
+    <div class="smoke-layer smoke-layer1"></div>
+    <div class="smoke-layer smoke-layer2"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <h3>Lushbytheway</h3>
+            <p>Modern sound. Unique vibe.</p>
+        </div>
+
+       
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Lushbytheway. All rights reserved.
+    </div>
+</footer>
+
+<!-- SINGLE overlay only -->
+<div class="page-transition"></div>
+
+<script>
+    const overlay = document.querySelector('.page-transition');
+
+    document.querySelectorAll('a[href]').forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+
+            // Ignore external links and anchors
+            if (
+                href.startsWith('http') ||
+                href.startsWith('#') ||
+                link.target === '_blank'
+            ) return;
+
+            e.preventDefault();
+            overlay.classList.add('active');
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 150); // 0.15s flash
+        });
+    });
+
+    window.addEventListener('pageshow', () => {
+        overlay.classList.remove('active');
+    });
+</script>
+
+</body>
+</html>
+
+

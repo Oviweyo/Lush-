@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Lushbytheway</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-transition"></div>
+
+
+<header>
+    <nav>
+        <div class="logo">Lushbytheway</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-header">
+    <h1>About Lushbytheway</h1>
+</div>
+
+<div class="container">
+
+    <!-- BIO SECTION -->
+    <div class="card section-block">
+        <h2>Biography</h2>
+        <p>Lush Bytheway (real name Lungisile Mdunyelwa) is a South African hip-hop and rap artist from Mdantsane, NU 14 in the Eastern Cape. Raised in a community rich with culture, resilience, and raw talent, Lush’s upbringing played a major role in shaping both his character and his music. From an early age, he was exposed to the realities of township life—its struggles, its creativity, and its strong sense of unity—which later became the foundation of his lyrical identity.</p>
+        <p>Growing up in Mdantsane, Lush developed a deep appreciation for storytelling, rhythm, and expression. Music became more than just a passion; it became a voice. Through hip-hop, he found a way to speak on real experiences, personal growth, and social realities, delivering his message with honesty and confidence. His sound blends classic hip-hop influence with a modern edge, allowing him to connect with both older listeners and the new generation.</p>
+        <p>Over the years, Lush Bytheway has steadily built his name within the Eastern Cape music scene and beyond. Through live performances, studio work, collaborations, and community involvement, he has earned recognition as a dedicated and hardworking artist. His consistency, authenticity, and respect for the craft have helped him gain loyal supporters and respect among fellow musicians. Lush represents not only his personal journey, but also the spirit of Mdantsane—ambitious, resilient, and unapologetically real.</p>
+    </div>
+
+    <!-- INSPIRATIONS / STORY SECTION -->
+    <div class="card section-block">
+        <h2>Story & Inspirations</h2>
+        <p>Lush Bytheway’s journey into music was driven by his environment and his desire to express truth through art. Inspired by the sounds, stories, and struggles around him, he began writing and performing music as a way to document life from his perspective. Hip-hop became his tool for storytelling—allowing him to reflect on personal experiences, community challenges, and the determination to rise above limitations.
+
+His dedication led him to take part in major platforms such as the Back To The City Youth Festival, where he represented the Eastern Cape and earned recognition among the province’s top rap talents. These experiences not only strengthened his confidence but also sharpened his performance skills, stage presence, and competitive mindset. Being exposed to artists from different backgrounds pushed him to grow creatively and refine his sound.</p>
+        <p>Lush draws inspiration from real-life experiences, street knowledge, personal discipline, and the legacy of hip-hop as a culture of truth and resistance. His music reflects ambition, perseverance, and pride in where he comes from. Whether performing live or recording in the studio, his goal remains the same: to stay authentic, inspire others from similar backgrounds, and continue evolving as an artist while staying rooted in his identity.</p>
+    </div>
+
+    <!-- VIDEO SECTION -->
+    <div class="card section-block">
+        <h2>Performance Videos</h2>
+
+        <!-- VIDEO 1 -->
+        <div class="video-box">
+            <iframe
+                src="https://www.youtube.com/embed/5ymfd3R5U-s"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="video-box">
+            <iframe
+                src="https://www.youtube.com/embed/ew9igslzYyw"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- VIDEO 3 (was image, now video) -->
+        <div class="video-box">
+            <iframe
+                src="https://www.youtube.com/embed/7YQpOS6ussk"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+
+    
+    <!-- VIDEO HIGHLIGHTS SECTION -->
+<div class="card section-block">
+    <h2>Video Highlights</h2>
+
+    <div class="video-box">
+        <iframe
+            src="https://www.youtube.com/embed/_Wd1F4Vn-BI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+<script>
+    const overlay = document.querySelector('.page-transition');
+
+    function flashTransition(e) {
+        const link = e.currentTarget;
+        if(link.hostname === window.location.hostname && link.getAttribute('href') !== "#") {
+            e.preventDefault();
+            overlay.classList.add('active');
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 300); // 0.3-second flash
+        }
+    }
+
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', flashTransition);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        overlay.classList.remove('active');
+    });
+</script>
+
+</html>
+
+

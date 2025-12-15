@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Lushbytheway</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-transition"></div>
+
+
+<header>
+    <nav>
+        <div class="logo">Lushbytheway</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-header">
+    <h1>Contact</h1>
+</div>
+
+<div class="container">
+
+    <!-- CONTACT CARD -->
+    <div class="card contact-card">
+        <p>Email: <a href="mailto:example@email.com">example@email.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/lushbytheway" target="_blank">@lushbytheway</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/Lush.bytheway" target="_blank">Lush.bytheway</a></p>
+        <p>YouTube: <a href="https://www.youtube.com/@Lushbytheway" target="_blank">Lushbytheway</a></p>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="card contact-card">
+        <h2>Send a Message</h2>
+        <form action="mailto:example@email.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+<script>
+    const overlay = document.querySelector('.page-transition');
+
+    function flashTransition(e) {
+        const link = e.currentTarget;
+        if(link.hostname === window.location.hostname && link.getAttribute('href') !== "#") {
+            e.preventDefault();
+            overlay.classList.add('active');
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 300); // 0.3-second flash
+        }
+    }
+
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', flashTransition);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        overlay.classList.remove('active');
+    });
+</script>
+
+</html>
